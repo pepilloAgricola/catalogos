@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catálogo de Laptops</title>
+<meta name="description" content="Laptops de uso, nuevas y gaming. Pide la tuya por WhatsApp.">
+<meta name="theme-color" content="#141c26">
+<meta property="og:title" content="Catálogo de Laptops">
+<meta property="og:description" content="Laptops de uso, nuevas y gaming. Pide la tuya por WhatsApp.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand" id="brand">Catálogo de Laptops</div>
+    <div class="brand-sub" id="brandSub">Laptops de uso, nuevas y gaming</div>
+    <a class="wa-top" id="waTop" href="#" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+  </div>
+</header>
+
+<div class="tools">
+  <div class="tools-in">
+    <div class="search">
+      <input id="q" type="search" placeholder="Buscar: i5, 16 GB, Lenovo, RTX…" aria-label="Buscar">
+      <select id="sort" aria-label="Ordenar">
+        <option value="">Destacados</option>
+        <option value="asc">Precio ↑</option>
+        <option value="desc">Precio ↓</option>
+      </select>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Categorías"></div>
+  </div>
+</div>
+
+<main>
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid" aria-live="polite"><div class="empty">Cargando catálogo…</div></div>
+</main>
+<footer id="foot"></footer>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <div class="bg" data-close></div>
+  <div class="panel" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="dTitle" id="panel"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
