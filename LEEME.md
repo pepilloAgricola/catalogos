@@ -80,3 +80,13 @@ Cada producto tiene su propio link: el cliente abre una laptop, le da a **↗** 
 - **Publiqué algo mal**: en GitHub, repo → **Commits**. Ahí está el historial completo de cambios y puedes ver o recuperar cualquier versión anterior.
 - **Perdí el móvil**: en GitHub → Settings → Developer settings → Fine-grained tokens, borra ese token y crea uno nuevo. Sin token nadie puede tocar el catálogo, aunque abra `admin.html`.
 - **No veo los cambios**: espera 2 minutos y recarga. En el móvil, a veces hay que cerrar y volver a abrir la pestaña.
+
+## La página pública (landing)
+
+`index.html` ya no es solo la lista: es una página con portada, tipos de laptop, el catálogo, «Cómo comprar» y un cierre con WhatsApp.
+
+- **Lo que sale solo de los productos del panel**: las tres laptops de la portada (la primera de uso, la gaming más cara y la primera nueva), la franja de marcas, y los «X disponibles, desde $Y» de cada tipo.
+- **Nombre, WhatsApp y moneda**: en *Datos de la tienda* del panel, como siempre.
+- **Frase de la portada**: el campo *Frase* de *Datos de la tienda*. Si se deja la frase de fábrica, la página usa su propio texto.
+- **Titular, textos de los tipos y pasos de compra**: se editan directamente en `index.html`.
+- **Tipografía**: Archivo, incluida en `assets/fonts/` (licencia libre OFL). No carga nada de internet.

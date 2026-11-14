@@ -66,3 +66,76 @@ legend{font-weight:800;font-size:13px;padding:0 6px;text-transform:uppercase;let
 .toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;
   font-size:14px;z-index:30;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90vw;text-align:center}
 .toast.show{opacity:1}
+
+
+/* =========================================================
+   Aspecto del panel, a juego con la página pública.
+   Solo cambia la apariencia; el funcionamiento es el mismo.
+   ========================================================= */
+@font-face{
+  font-family:"Archivo";font-style:normal;font-display:swap;
+  font-weight:100 900;font-stretch:62% 125%;
+  src:url(fonts/archivo.woff2) format("woff2-variations"),url(fonts/archivo.woff2) format("woff2");
+}
+:root{--blue:#1d4ed8;--neon:#76ff03;font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif}
+body{line-height:1.45;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+.bar{box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.bar-in{padding:14px 16px}
+.bar strong{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-.01em}
+.bar strong::before{content:"";width:26px;height:26px;flex:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 8h16v12H8z' stroke='%23fff' stroke-width='2.4'/%3E%3Cpath d='M4 24h24' stroke='%2376ff03' stroke-width='2.8'/%3E%3C/svg%3E") center/contain no-repeat}
+.bar .lnk{padding:7px 12px;border-radius:999px;font-weight:600;transition:background-color .2s,color .2s}
+.bar .lnk:hover{background:rgba(255,255,255,.1);color:#fff}
+.bar-act{gap:4px}
+
+.wrap{padding-top:22px}
+.box{border-radius:18px;padding:20px;box-shadow:0 1px 2px rgba(20,28,38,.05)}
+h1{font-size:24px;font-weight:850;font-stretch:108%;letter-spacing:-.025em}
+summary{font-weight:800;font-size:16px}
+label{font-weight:650}
+input:not([type=checkbox]),select,textarea{border-radius:12px;padding:11px 13px;transition:border-color .2s,box-shadow .2s}
+input:not([type=checkbox]):focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 4px rgba(20,28,38,.08)}
+fieldset{border-radius:14px;padding:6px 14px 14px;margin-top:18px}
+legend{text-transform:none;letter-spacing:0;font-size:15px;color:var(--ink)}
+.chk input{accent-color:var(--teal)}
+
+.btn{height:44px;padding:0 18px;border-radius:999px;transition:transform .2s,box-shadow .2s,background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn.pri{box-shadow:0 8px 18px -10px rgba(20,28,38,.7)}
+@media (hover:hover){
+  .btn:hover{background:#e2e5e9}
+  .btn.pri:hover{background:#1e2a38;transform:translateY(-1px)}
+  .btn.danger:hover{background:#fecaca}
+}
+.btn.up{border:1.5px dashed #b6bec8;background:#fff}
+
+.list-head{gap:10px;margin:18px 0 14px}
+.list-head input{height:44px;border-radius:999px;padding:0 16px}
+.item{border-radius:16px;padding:10px;gap:12px;transition:border-color .2s,box-shadow .2s,transform .2s}
+@media (hover:hover){.item:hover{border-color:#b6bec8;box-shadow:0 10px 22px -16px rgba(20,28,38,.5);transform:translateY(-1px)}}
+.item img{width:72px;height:46px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:10px}
+.item .t b{font-size:15px;font-weight:750}
+.ib{width:36px;height:36px;border-radius:10px;transition:background-color .2s}
+.ib:hover{background:#e2e5e9}
+.tag{text-transform:none;font-size:11.5px;padding:2px 7px;border-radius:999px}
+
+.pub{background:var(--ink);color:#fff;border-top:0;box-shadow:0 -10px 30px -12px rgba(20,28,38,.5)}
+.pub #pubTxt{font-weight:650}
+.pub .btn{background:rgba(255,255,255,.12);color:#fff}
+.pub .btn:hover{background:rgba(255,255,255,.2)}
+.pub .btn.pri{background:var(--neon);color:#0b1a00;box-shadow:none}
+.pub .btn.pri:hover{background:#8dff33}
+
+.im{border-radius:12px;border:1px solid var(--line);background:#fff}
+.im img{object-fit:contain}
+.overlay{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.toast{font-weight:600}
+
+@media (prefers-reduced-motion:no-preference){
+  .wrap:not([hidden]){animation:viewIn .35s cubic-bezier(.2,.75,.2,1)}
+  .pub:not([hidden]){animation:pubIn .35s cubic-bezier(.2,.75,.2,1)}
+}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes pubIn{from{transform:translateY(100%)}to{transform:none}}

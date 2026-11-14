@@ -4,46 +4,151 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Catálogo de Laptops</title>
-<meta name="description" content="Laptops de uso, nuevas y gaming. Pide la tuya por WhatsApp.">
+<meta name="description" content="Laptops de uso, nuevas y gaming en La Habana. Mira fotos, specs y precio, y pide la tuya por WhatsApp.">
 <meta name="theme-color" content="#141c26">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Catálogo de Laptops">
-<meta property="og:description" content="Laptops de uso, nuevas y gaming. Pide la tuya por WhatsApp.">
+<meta property="og:description" content="Laptops de uso, nuevas y gaming. Mira fotos, specs y precio, y pide la tuya por WhatsApp.">
+<link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141c26'/%3E%3Cpath d='M8 9h16v11H8z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M5 24h22' stroke='%2376ff03' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<header class="top">
-  <div class="top-in">
-    <div class="brand" id="brand">Catálogo de Laptops</div>
-    <div class="brand-sub" id="brandSub">Laptops de uso, nuevas y gaming</div>
-    <a class="wa-top" id="waTop" href="#" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+<div id="page">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path class="l1" d="M8 8h16v12H8z"/><path class="l2" d="M4 24h24"/></svg>
+      <span id="brand">Catálogo de Laptops</span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#tipos">Tipos</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#como-comprar">Cómo comprar</a>
+    </nav>
+    <a class="btn btn-wa btn-sm" id="waNav" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span>
+    </a>
   </div>
 </header>
 
-<div class="tools">
-  <div class="tools-in">
-    <div class="search">
-      <input id="q" type="search" placeholder="Buscar: i5, 16 GB, Lenovo, RTX…" aria-label="Buscar">
-      <select id="sort" aria-label="Ordenar">
-        <option value="">Destacados</option>
-        <option value="asc">Precio ↑</option>
-        <option value="desc">Precio ↓</option>
-      </select>
+<!-- ============ Portada ============ -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <h1>Laptops <span class="u u-uso">de uso</span>, <span class="u u-nueva">nuevas</span> y <span class="u u-gaming">gaming</span> en La Habana.</h1>
+      <p class="hero-sub" id="brandSub">Mira las fotos, las specs y el precio de cada una, y pídela por WhatsApp.</p>
+      <div class="hero-cta">
+        <a class="btn btn-light" href="#catalogo">Ver el catálogo</a>
+        <a class="btn btn-wa" id="waHero" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp
+        </a>
+      </div>
+      <p class="hero-fact" id="heroFact"></p>
     </div>
-    <div class="chips" id="chips" role="group" aria-label="Categorías"></div>
+    <div class="fan" id="fan" aria-label="Algunas laptops del catálogo"></div>
   </div>
-</div>
+</section>
 
-<main>
-  <div class="count" id="count"></div>
-  <div class="grid" id="grid" aria-live="polite"><div class="empty">Cargando catálogo…</div></div>
-</main>
-<footer id="foot"></footer>
+<!-- ============ Marcas ============ -->
+<div class="brands" aria-hidden="true"><div class="brands-track" id="brands"></div></div>
+
+<!-- ============ Tipos ============ -->
+<section class="types" id="tipos">
+  <div class="wrap">
+    <h2 class="rv">¿Qué tipo de laptop buscas?</h2>
+    <div class="types-grid">
+      <button class="type t-uso rv" data-cat="uso">
+        <span class="type-name">De uso</span>
+        <span class="type-desc">Más máquina por menos dinero. Cada una indica su grado de estado.</span>
+        <span class="type-meta" data-meta="uso"></span>
+        <span class="type-photo"><img data-photo="uso" alt="" loading="lazy"></span>
+      </button>
+      <button class="type t-nueva rv" data-cat="nueva" style="--d:1">
+        <span class="type-name">Nuevas</span>
+        <span class="type-desc">Sin uso, para estudiar, trabajar y la casa.</span>
+        <span class="type-meta" data-meta="nueva"></span>
+        <span class="type-photo"><img data-photo="nueva" alt="" loading="lazy"></span>
+      </button>
+      <button class="type t-gaming rv" data-cat="gaming" style="--d:2">
+        <span class="type-name">Gaming</span>
+        <span class="type-desc">Con tarjeta gráfica RTX, para jugar y editar.</span>
+        <span class="type-meta" data-meta="gaming"></span>
+        <span class="type-photo"><img data-photo="gaming" alt="" loading="lazy"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Catálogo ============ -->
+<section class="catalog" id="catalogo">
+  <div class="wrap">
+    <h2 class="rv">Catálogo</h2>
+  </div>
+  <div class="tools" id="tools">
+    <div class="wrap tools-in">
+      <div class="search">
+        <input id="q" type="search" placeholder="Buscar: i5, 16 GB, Lenovo, RTX…" aria-label="Buscar">
+        <select id="sort" aria-label="Ordenar">
+          <option value="">Destacados</option>
+          <option value="asc">Precio: menor a mayor</option>
+          <option value="desc">Precio: mayor a menor</option>
+        </select>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Categorías"></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="count" id="count" aria-live="polite"></div>
+    <div class="grid" id="grid"><div class="empty">Cargando catálogo…</div></div>
+  </div>
+</section>
+
+<!-- ============ Cómo comprar ============ -->
+<section class="how" id="como-comprar">
+  <div class="wrap">
+    <h2 class="rv">Cómo comprar</h2>
+    <ol class="steps rv" id="steps">
+      <li><span class="step-n">1</span><h3>Elige tu laptop</h3><p>Abre la que te guste en el catálogo y revisa fotos, specs y precio.</p></li>
+      <li><span class="step-n">2</span><h3>Pídela por WhatsApp</h3><p>El botón de la ficha te deja el mensaje escrito, con el modelo y el precio.</p></li>
+      <li><span class="step-n">3</span><h3>Coordinamos la entrega</h3><p>Te confirmamos que sigue disponible y acordamos cómo y dónde entregarla.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ Cierre ============ -->
+<section class="close">
+  <div class="wrap close-in rv">
+    <h2>¿No sabes cuál elegir?</h2>
+    <p>Dinos para qué la quieres y cuánto piensas gastar, y te decimos cuál te conviene.</p>
+    <a class="btn btn-dark" id="waClose" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <b id="brandFoot">Catálogo de Laptops</b>
+    <span id="foot"></span>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+</div>
 
 <div class="sheet" id="sheet" aria-hidden="true">
   <div class="bg" data-close></div>
   <div class="panel" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="dTitle" id="panel"></div>
 </div>
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 1 1 6.99 3.86Zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.28Z"/></symbol>
+</svg>
 
 <script src="assets/app.js"></script>
 </body>
