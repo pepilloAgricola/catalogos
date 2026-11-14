@@ -90,3 +90,18 @@ Cada producto tiene su propio link: el cliente abre una laptop, le da a **↗** 
 - **Frase de la portada**: el campo *Frase* de *Datos de la tienda*. Si se deja la frase de fábrica, la página usa su propio texto.
 - **Titular, textos de los tipos y pasos de compra**: se editan directamente en `index.html`.
 - **Tipografía**: Archivo, incluida en `assets/fonts/` (licencia libre OFL). No carga nada de internet.
+
+## Antes de publicar: revisión automática
+
+Desde la carpeta del proyecto ejecuta:
+
+```
+python tools/validar.py
+```
+
+Revisa que `productos.json` esté bien escrito, que cada producto tenga precio, categoría y fotos que existan, que la página no use archivos que falten y que no se haya colado un token. Si dice «Todo correcto», haz el `git push`. Si lista errores, corrígelos primero.
+
+## Seguridad
+
+- `index.html` y `admin.html` llevan una etiqueta `Content-Security-Policy`: el navegador solo carga archivos de este sitio y bloquea scripts externos o incrustados. Si algún día añades algo de fuera (un mapa, un vídeo, estadísticas), hay que permitirlo ahí.
+- El token del panel se guarda solo en el navegador donde lo escribes. Créalo *fine-grained*, solo para este repositorio, solo con permiso **Contents: Read and write** y con fecha de caducidad.

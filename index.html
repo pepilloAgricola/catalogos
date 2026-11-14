@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Seguridad: la página solo puede cargar archivos de este mismo sitio (nada de scripts externos ni incrustados). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Catálogo de Laptops</title>
 <meta name="description" content="Laptops de uso, nuevas y gaming en La Habana. Mira fotos, specs y precio, y pide la tuya por WhatsApp.">
 <meta name="theme-color" content="#141c26">
